@@ -270,7 +270,7 @@ const ScreenCreator = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <InputField
                             value={screenName}
-                            placeholder="e.g., Screen 1, IMAX Hall, 4DX Screen"
+                            placeholder="e.g., Screen 1, 4DX Screen"
                             label="Screen Name"
                             onChange={setScreenName}
                         />
