@@ -7,7 +7,8 @@ export const API_ROUTES = {
         LOGIN: `/auth/login`,
     },
     MOVIE: {
-        FETCH_MOVIES: `/movies`
+        FETCH_MOVIES: `/movies`,
+        CREATE_MOVIE: `/movies`
     },
     THEATER: {
         CREATE: `/theaters`

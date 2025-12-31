@@ -16,6 +16,9 @@ const Header = (_: Props) => {
 
     const hideButtons = location.pathname === "/auth";
 
+    console.log("i am called");
+    
+
     return (
         <div className="w-full flex justify-between items-center h-20 px-8 relative z-20">
             <Link to="/">
@@ -27,10 +30,16 @@ const Header = (_: Props) => {
                 {user ? (
                     <>
                         {user.role === UserRole.ADMIN && (
-                            <CustomButton
-                                text="Add Theater"
-                                to="/theater/create"
-                            />
+                            <div className="flex">
+                                <CustomButton
+                                    text="Add Movie"
+                                    to="/movies/create"
+                                />
+                                <CustomButton
+                                    text="Add Theater"
+                                    to="/theater/create"
+                                />
+                            </div>
                         )}
 
                         <CustomButton

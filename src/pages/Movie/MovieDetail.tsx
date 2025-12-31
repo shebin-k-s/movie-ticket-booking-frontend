@@ -27,7 +27,7 @@ const MovieDetail = () => {
 
     useEffect(() => {
         if (selectedMovie) {
-            dispatch(fetchShowsByMovie(selectedMovie.movieId));
+            dispatch(fetchShowsByMovie(selectedMovie.movieId??''));
         }
     }, [selectedMovie]);
 

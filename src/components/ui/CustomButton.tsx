@@ -16,6 +16,8 @@ const CustomButton = ({ text, onClick, bgColor, outlined = false, to, fullWidth 
   const filledClasses = bgColor;
   const outlinedClasses = `border border-white bg-transparent text-white`;
 
+  console.log("i am also");
+  
   return (
     <div
       onClick={() => {

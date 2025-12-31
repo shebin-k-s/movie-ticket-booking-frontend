@@ -14,6 +14,7 @@ import ScreenShowsPage from "../pages/ScreenShows/ScreenShows";
 import SeatSelectionWrapper from "../pages/ScreenShows/components/SeatSelectionWrapper";
 import CreateShow from "../pages/ScreenShows/CreateShow";
 import CreateTheater from "../pages/CreateTheater";
+import CreateMovie from "../pages/Movie/CreateMovie";
 
 type Props = {}
 
@@ -25,9 +26,6 @@ const AppRoutes = (_: Props) => {
         <Routes>
 
             <Route element={<BaseLayout />}>
-
-
-
                 <Route
                     path="/auth"
                     element={
@@ -58,6 +56,14 @@ const AppRoutes = (_: Props) => {
                         <Route
                             path="/theater/create"
                             element={<CreateTheater />}
+                        />
+                    </Route>
+
+                    <Route element={<ProtectedRoute allowedRoles={[UserRole.ADMIN,UserRole.THEATER_ADMIN]} />}>
+
+                        <Route
+                            path="/movies/create"
+                            element={<CreateMovie />}
                         />
                     </Route>
 
