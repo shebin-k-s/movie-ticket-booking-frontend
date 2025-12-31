@@ -1,10 +1,8 @@
 import MovieCard from './components/MovieCard'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 import { fetchMovies } from '../../features/movies/moviesThunk'
 import { clearSelectedMovie } from '../../features/movieDetail/movieDetailSlice'
-import { MovieApi } from '../../api/endpoints/movieApi'
-import type { Movie } from '../../features/movies/moviesTypes'
 
 type Props = {}
 
@@ -21,17 +19,6 @@ const Home = ({ }: Props) => {
     }, [loading, event])
 
 
-    const [data, setData] = useState<Movie[]>([])
-
-
-    const messagess = async () => {
-        const res = await MovieApi.fetchMovies()
-        setData(res.movies)
-    }
-
-    useEffect(() => {
-        messagess()
-    }, [])
 
     useEffect(() => {
         dispatch(clearSelectedMovie());
